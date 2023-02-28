@@ -55,10 +55,12 @@ const Data = () => {
           ></path>
         </svg>
       </h1>
-      <h3 className="home__subtitle">Quantitative Developer</h3>
+      <h3 className="home__subtitle">Quantitative Analyst</h3>
       <p className="home__description">
-        I am a full-stack quantitative developer and a systems thinker. I own a
-        curious, compassionate, and courageous mindset.
+        I am a full-stack quantitative developer and a systems thinker with a
+        curious, compassionate, and courageous mindset. Currently working as a
+        Quantitative Analyst at <a href="https://reason.org/" style={{"text-decoration": "underline"}}>Reason Foundation</a>, I specialize in sketching holistic
+        solutions to the design of public pension plans in the US.
       </p>
       <a href="#contact" className="button button--flex">
         Say Hello

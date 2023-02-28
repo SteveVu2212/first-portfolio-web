@@ -1,11 +1,5 @@
-// import Work1 from "../../assets/work1.jpg";
-// import Work2 from "../../assets/work2.jpg";
-// import Work3 from "../../assets/work3.jpg";
-// import Work4 from "../../assets/work4.jpg";
-// import Work5 from "../../assets/work5.jpg";
-
 import house from "../../assets/house-rent.webp";
-import sprint_card from '../../assets/sprint-cards.png'
+import sprint_card from "../../assets/sprint-cards.png";
 import baseball from "../../assets/baseball.webp";
 import image_search from "../../assets/image-search.webp";
 import pension from "../../assets/pension.webp";
@@ -36,7 +30,7 @@ export const projectsData = [
   {
     id: 4,
     image: pension,
-    title: "Pension Benchmark Modeling",
+    title: "Pension Benchmark Portfolio Model",
     category: "modeling",
     link: "https://github.com/SteveVu2212/SteveVu2212.github.io",
   },
@@ -52,7 +46,7 @@ export const projectsData = [
     image: admin_dashboard,
     title: "Admin Dashboard",
     category: "dataviz",
-    link: "https://administration-dashboard.netlify.app/",
+    link: "https://github.com/SteveVu2212/admin-dashboard",
   },
 ];
 

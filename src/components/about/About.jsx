@@ -15,9 +15,11 @@ const About = () => {
         <div className="about__data">
           <Info />
           <p className="about__description">
-            Full-stack quantitative developer, I build relational databases,
-            create models, and design web apps. I have years of experience in
-            consulting fund managers and state legislature.
+            As a full-stack quantitative developer, I excel at managing
+            relational database, constructing statistical and financial models,
+            and designing intuitive web applications that effectively illustrate
+            quantitative solutions to stakeholders. I have honed my skills over
+            several years advising fund managers and state legislators.
           </p>
 
           <a download="" href={CV} className="button button--flex">
