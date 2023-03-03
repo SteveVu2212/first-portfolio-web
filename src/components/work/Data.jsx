@@ -30,8 +30,8 @@ export const projectsData = [
   {
     id: 4,
     image: pension,
-    title: "Pension Benchmark Portfolio Model",
-    category: "modeling",
+    title: "Pension Benchmark Portfolio",
+    category: "dataviz",
     link: "https://github.com/SteveVu2212/SteveVu2212.github.io",
   },
   {

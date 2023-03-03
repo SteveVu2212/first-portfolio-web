@@ -1,9 +1,61 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
 
 const Contact = () => {
   const form = useRef();
+
+  const [enteredName, setEnteredName] = useState("");
+  const [enteredEmail, setEnteredEmail] = useState("");
+  const [enteredIdea, setEnteredIdea] = useState("");
+
+  const [nameIsValid, setNameIsValid] = useState();
+  const [emailIsValid, setEmailIsValid] = useState();
+  const [ideaIsValid, setIdeaIsValid] = useState();
+
+  const [formIsValid, setFormIsValid] = useState(false);
+
+  const nameChangeHandler = (event) => {
+    setEnteredName(event.target.value);
+
+    setFormIsValid(
+      event.target.value.trim().length > 3 &&
+        enteredEmail.includes("@") &&
+        enteredIdea.trim().length > 10
+    );
+  };
+
+  const emailChangeHandler = (event) => {
+    setEnteredEmail(event.target.value);
+
+    setFormIsValid(
+      event.target.value.includes("@") &&
+        enteredName.trim().length > 3 &&
+        enteredIdea.trim().length > 10
+    );
+  };
+
+  const ideaChangeHandler = (event) => {
+    setEnteredIdea(event.target.value);
+
+    setFormIsValid(
+      event.target.value.trim().length > 10 &&
+        enteredEmail.includes("@") &&
+        enteredName.trim().length > 3
+    );
+  };
+
+  const validateEmailHandler = () => {
+    setEmailIsValid(enteredEmail.includes("@"));
+  };
+
+  const validateNameHandler = () => {
+    setNameIsValid(enteredName.trim().length > 3);
+  };
+
+  const validateIdeaHandler = () => {
+    setIdeaIsValid(enteredIdea.trim().length > 6);
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -36,6 +88,7 @@ const Contact = () => {
               <a
                 href="mailto:stevevu2212@gmail.com"
                 className="contact__button"
+                target="_blank"
               >
                 Write me{" "}
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
@@ -48,7 +101,11 @@ const Contact = () => {
               <h3 className="contact__card-title">Twitter</h3>
               {/* <span className="contact__card-data">999-888-777</span> */}
 
-              <a href="https://twitter.com/home" className="contact__button">
+              <a
+                href="https://twitter.com/home"
+                className="contact__button"
+                target="_blank"
+              >
                 Connect me{" "}
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
               </a>
@@ -63,6 +120,7 @@ const Contact = () => {
               <a
                 href="https://www.facebook.com/messages/t/100010499193051/"
                 className="contact__button"
+                target="_blank"
               >
                 Text me{" "}
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
@@ -73,39 +131,66 @@ const Contact = () => {
 
         <div className="contact__content">
           <h3 className="contact__title">Write me your ideas</h3>
-          <form ref={form} onSubmit={sendEmail} className="contact_Form">
-            <div className="contact__form-div">
-              <label className="contact__form-tag">Name</label>
+          <form ref={form} onSubmit={sendEmail} className="contact_form">
+            <div
+              className={
+                nameIsValid === false
+                  ? "contact__form-div invalid"
+                  : "contact__form-div"
+              }
+            >
+              {/* <label className={nameIsValid === false ? "contact__form-tag invalid" : "contact__form-tag"}>Name</label> */}
               <input
                 type="text"
                 name="name"
                 className="contact__form-input"
                 placeholder="Insert your name"
+                value={enteredName}
+                onChange={nameChangeHandler}
+                onBlur={validateNameHandler}
               />
             </div>
 
-            <div className="contact__form-div">
-              <label className="contact__form-tag">Mail</label>
+            <div
+              className={
+                emailIsValid === false
+                  ? "contact__form-div invalid"
+                  : "contact__form-div"
+              }
+            >
+              {/* <label className="contact__form-tag">Mail</label> */}
               <input
                 type="email"
                 name="email"
                 className="contact__form-input"
                 placeholder="Insert your email"
+                value={enteredEmail}
+                onChange={emailChangeHandler}
+                onBlur={validateEmailHandler}
               />
             </div>
 
-            <div className="contact__form-div contact__form-area">
-              <label className="contact__form-tag">Ideas</label>
+            <div
+              className={
+                ideaIsValid === false
+                  ? "contact__form-div contact__form-area invalid"
+                  : "contact__form-div contact__form-area"
+              }
+            >
+              {/* <label className="contact__form-tag">Ideas</label> */}
               <textarea
                 name="project"
                 cols="30"
                 rows="10"
                 className="contact__form-input"
                 placeholder="Write your ideas"
+                value={enteredIdea}
+                onChange={ideaChangeHandler}
+                onBlur={validateIdeaHandler}
               ></textarea>
             </div>
 
-            <button className="button button--flex">
+            <button className="button button--flex" disabled={!formIsValid}>
               Send Message
               <svg
                 class="button__icon"

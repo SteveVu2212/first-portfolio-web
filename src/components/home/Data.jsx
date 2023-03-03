@@ -59,8 +59,16 @@ const Data = () => {
       <p className="home__description">
         I am a full-stack quantitative developer and a systems thinker with a
         curious, compassionate, and courageous mindset. Currently working as a
-        Quantitative Analyst at <a href="https://reason.org/" style={{"text-decoration": "underline"}}>Reason Foundation</a>, I specialize in sketching holistic
-        solutions to the design of public pension plans in the US.
+        Quantitative Analyst at{" "}
+        <a
+          href="https://reason.org/"
+          target="_blank"
+          style={{ "text-decoration": "underline" }}
+        >
+          Reason Foundation
+        </a>
+        , I specialize in sketching holistic solutions to the design of public
+        pension plans in the US.
       </p>
       <a href="#contact" className="button button--flex">
         Say Hello

@@ -44,9 +44,9 @@ const Footer = () => {
           </a>
 
           <a
+            target="_blank"
             href="https://twitter.com/TuVu25143373"
             className="footer__social-link"
-            target="_blank"
           >
             <i class="bx bxl-twitter"></i>
           </a>

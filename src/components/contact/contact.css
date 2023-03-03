@@ -68,6 +68,12 @@
   width: 360px;
 }
 
+.contact__form-div.invalid {
+  background: rgb(252, 238, 238);
+  border-color: #ccc;
+  border-radius: 0.75rem;
+}
+
 .contact__form-div {
   position: relative;
   margin-bottom: var(--mb-2);
@@ -105,6 +111,15 @@
 
 .contact__form-area textarea {
   resize: none;
+}
+
+
+button:disabled,
+button:focus:disabled,
+button:hover:disabled,
+button:active:disabled {
+  background-color: var(--title-color);
+  cursor: not-allowed;
 }
 
 /*=============== BREAKPOINTS ===============*/
