@@ -4,14 +4,15 @@ import baseball from "../../assets/baseball.webp";
 import image_search from "../../assets/image-search.webp";
 import pension from "../../assets/pension.webp";
 import admin_dashboard from "../../assets/admin-dashboard.png";
+import dall_e from "../../assets/dall-e-drawing.png"
 
 export const projectsData = [
   {
     id: 1,
-    image: house,
-    title: "House Rental Web",
+    image: dall_e,
+    title: "AI Image Generator",
     category: "web",
-    link: "https://github.com/SteveVu2212/org-rental-app",
+    link: "https://github.com/SteveVu2212/orig-dall-e-app",
   },
   {
     id: 2,
